@@ -1,0 +1,271 @@
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: "nunitosans", sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    background: #f7f7f7;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    /*    background: url("http://digital.bnint.com/filelib/s9/photos/white_wood_4500x3000_lo_res.jpg");*/
+}
+
+@font-face {
+    font-family: nunitosans;
+    src: url(../Fonts/NunitoSans/NunitoSans-Light.ttf);
+}
+
+@font-face {
+    font-family: raleway;
+    src: url(../Fonts/Raleway/Raleway-Light.ttf);
+}
+
+@font-face {
+    font-family: nexa;
+    src: url(../Fonts/Nexa/NexaBold.otf);
+}
+
+
+label .menu {
+    position: absolute;
+    right: -100px;
+    top: -100px;
+    z-index: 100;
+    width: 200px;
+    height: 200px;
+    background: transparent;
+    /*    border-top-left-radius: 50%;*/
+    border-bottom-left-radius: 50%;
+    /*  border-bottom-left-radius: */
+    transition: .7s ease-in-out;
+    box-shadow: 0 0 0 0 black, 0 0 0 0 black;
+    cursor: pointer;
+}
+
+label .menu:hover {
+    background: white;
+}
+
+label .hamburger {
+    position: absolute;
+    top: 140px;
+    left: 30px;
+    width: 38px;
+    height: 2.3px;
+    background: black;
+    display: block;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    transition: .5s ease-in-out;
+    border-radius: 15px;
+}
+
+label .hamburger:after,
+label .hamburger:before {
+    transition: .5s ease-in-out;
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: black;
+}
+
+label .hamburger:before {
+    top: -10px;
+}
+
+label .hamburger:after {
+    bottom: -10px;
+}
+
+label input {
+    display: none;
+}
+
+label input:checked + .menu {
+    box-shadow: 0 0 0 100vw black, 0 0 0 100vh black;
+    border-radius: 0;
+    background: black;
+}
+
+label input:checked + .menu .hamburger {
+    background: white;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+label input:checked + .menu .hamburger:after {
+    background: white;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+/*    overflow: hidden;*/
+    bottom: 0;
+}
+
+label input:checked + .menu .hamburger:before {
+    background: white;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    top: 0;
+}
+
+label input:checked + .menu + ul {
+    opacity: 1;
+}
+
+label ul {
+    z-index: 200;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    list-style-type: none;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: .25s 0s ease-in-out;
+    transition-delay: 0.2s;
+}
+
+label a {
+    font-size: 35px;
+    font-family: 'raleway';
+    letter-spacing: 3px;
+    margin-bottom: 1em;
+    display: block;
+    color: white;
+    transition: 0.5s 0s ease-in-out;
+    text-decoration: none;
+    position: relative;
+}
+
+/*
+label a:hover{
+    text-decoration: underline;
+}
+*/
+
+label a:after {
+    content: "";
+    position: absolute;
+    height: 2.5px;
+    background-color: tomato;
+    width: 0;
+    left: 20%;
+    bottom: 0;
+
+    transform: translateX(-20%);
+
+    transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+}
+
+label a:hover {
+    color: tomato;
+    /*    padding-bottom: 25px;*/
+    /*    text-decoration: underline;*/
+}
+
+label a:hover:after {
+    width: 100%;
+    color: tomato;
+}
+
+
+.navigation {
+    border-bottom: 1px solid #edf0f2;
+}
+
+.navigation-list {
+    margin: 0px;
+    background: white;
+    padding-left: 53px;
+}
+
+.navigation ul li {
+    display: inline-block;
+    list-style-type: none;
+    font-size: 20px;
+    padding-right: 40px;
+    /*Change padding to margin to change width of underline while hovering*/
+    margin-top: 35px;
+    margin-right: 10px;
+    margin-bottom: 35px;
+    cursor: pointer;
+    position: relative;
+}
+
+.navigation ul li:after {
+    content: "";
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 0%;
+    height: 2px;
+    background-color: black;
+    transition: .3s ease-in-out all .3s;
+}
+
+.navigation ul li:hover:after {
+    width: 100%;
+    transition: .3s ease-in-out all;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.product-heading h1 {
+    margin: 30px 0px 0px 0px;
+    font-weight: 200;
+    font-size: 50px;
+    font-family: 'nunitosans';
+    /*    text-shadow: 0.5px 0.5px 0.1px rgba(0, 0, 0, 0.3);*/
+    color: #202223;
+}
+
+.container {
+    height: 100vh;
+    width: 80%;
+    margin: 0px auto;
+}
+
+div .container-image {
+    text-shadow: none;
+    color: white;
+    /*
+    top: 50px;
+    left: 100px;
+*/
+
+    position: relative;
+    margin-top: 40px;
+    width: 100%;
+    height: 70%;
+    background: url(../Images/product-background.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+div .container-image h1 {
+    position: absolute;
+    text-shadow: none;
+    left: 10%;
+    top: 10%;
+    font-weight: 200;
+    font-size: 50px;
+    font-family: 'nunitosans';
+
+}
+
+div .container-image p {
+    position: absolute;
+    left: 10.5%;
+    top: 30%;
+    font-weight: 200;
+    font-size: 25px;
+    font-family: 'nunitosans';
+}
